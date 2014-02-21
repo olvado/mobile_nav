@@ -1,0 +1,26 @@
+{
+  "name": "BigBird",
+  "version": "0.3.4",
+  "main": "bigbird.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "spec"
+  ],
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "underscore": "~1.5.1",
+    "Eventable": "~1.0.2"
+  },
+  "homepage": "https://github.com/madebymany/bigbird",
+  "_release": "0.3.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.4",
+    "commit": "1799dc1a7852fe1a0c1310a0ab35c7fa2f981615"
+  },
+  "_source": "git://github.com/madebymany/bigbird.git",
+  "_target": "~0.3.3",
+  "_originalSource": "bigbird"
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MobileNav</title>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta http-equiv="cleartype" content="on">
+</head>
+<body data-module="<%= controller_name %>" data-action="<%= action_name %>">
+
+  <div class="site-container">
+    <header class="site-header">
+      <span class="site-header_text">MobileNav</span>
+      <a href="#" class="site-menu-toggler"><span class="icon--menu"></span></a>
+    </header>
+    <nav class="site-nav">
+      <% @sidebars.each do |sidebar| %>
+        <a href="#" class="site-nav_link">
+          <span class="icon--<%= sidebar %>"></span>
+          <span class="site-nav_link-text"><%= sidebar.humanize %></span>
+        </a>
+      <% end %>
+    </nav>
+    <div class="site-content">
+      <section class="sidebars">
+        <% @sidebars.each do |sidebar| %>
+          <div class="sidebar sidebar-<%= sidebar %>">
+            <%= content_tag(:h2, sidebar.humanize) %>
+            <div class="sidebar-content">
+              <% Random.rand(11).times do %>
+                <%= render 'item' %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <div class="content">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+<%= javascript_include_tag "application" %>
+</body>
+</html>
